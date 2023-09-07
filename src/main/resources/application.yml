@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: route1
+        uri: http://localhost:9090
+        predicates:
+        - Cookie=mycookie,mycookievalue
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "https://abc.xyz"
+            allowedMethods:
+            - GET
